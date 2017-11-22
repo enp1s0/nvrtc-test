@@ -1,11 +1,11 @@
 NVCC=nvcc
-NVCCFLAGS= -arch=sm_60 -std=c++11
+NVCCFLAGS= -arch=sm_60 -std=c++11 -lcuda -lnvrtc
 CXX=g++
 CXXFLAGS=-std=c++11
 OBJDIR=obj
 OBJLIST=cuda_common.o main.o
 OBJS= $(addprefix $(OBJDIR)/, $(OBJLIST))
-BIN=exec
+BIN=nvrtc-test
 
 $(BIN): $(OBJS)
 	$(NVCC) $(NVCCFLAGS) $+ -o $@
