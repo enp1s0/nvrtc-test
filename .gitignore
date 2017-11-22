@@ -1,2 +1,5 @@
 # I don't know emacs
 .*.swp
+
+obj/*.o
+nvrtc-test
